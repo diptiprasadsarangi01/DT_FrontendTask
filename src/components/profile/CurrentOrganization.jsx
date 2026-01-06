@@ -40,6 +40,7 @@ export default function CurrentOrganization({ org }) {
           <span className="text-xs text-blue-600 bg-blue-100 p-1 rounded-sm mb-3">{org.leader.title}</span>
         </p>
         <p className="text-sm text-gray-500">{org.leader.email}</p>
+        <p className="text-sm text-gray-500">{org.leader.phone}</p>
       </div>
 
       <div className="mt-4 text-sm text-gray-500 flex items-center gap-1">

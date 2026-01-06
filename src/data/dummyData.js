@@ -12,7 +12,19 @@ export const organization = {
   leader: {
     name: "Hariharan Anand",
     title: "CTO",
-    email: "hariharan@gmail.com"
+    email: "hariharan@gmail.com",
+    phone: "+91 1234567890"
   },
   location: "Hyderabad, TG, India"
+};
+
+export const memberships = {
+  total: 1,
+  members:{
+  name:"Amresh Puri",
+  designation: "spmember",
+  joindate: "January 3, 2026",
+  status: "Active"
+  }
+  
 };
