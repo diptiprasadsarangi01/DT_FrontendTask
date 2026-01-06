@@ -1,6 +1,6 @@
-import { Globe,ShieldCheck,Layers, MapPin } from "lucide-react";
+import { Globe,ShieldCheck,Layers, MapPin, Mail, Phone } from "lucide-react";
 
-export default function CurrentOrganization({ org }) {
+export default function CurrentOrganization({ org  }) {
   return (
     <div className="bg-white p-6 rounded-xl shadow">
       <h2 className="font-semibold mb-4 text-gray-600">Current Organization</h2>
@@ -73,9 +73,57 @@ export default function CurrentOrganization({ org }) {
         <p className="text-sm text-gray-500">{org.leader.phone}</p>
       </div>
 
-      <div className="mt-4 text-sm text-gray-500 flex items-center gap-1">
-        <MapPin size={14} /> {org.location}
+
+
+      <div className="mt-6">
+      <h3 className="text-sm font-semibold text-gray-600 mb-3 uppercase">
+        Locations & Contact
+      </h3>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        
+        {/* Office Location */}
+        <div className="border rounded-xl p-4">
+          <p className="text-xs text-gray-400 uppercase mb-2">
+            Office Locations
+          </p>
+
+          <div className="flex items-start gap-2 text-sm text-gray-700">
+            <MapPin size={16} className="mt-0.5" />
+            <div>
+              <p className="font-medium text-gray-500"><span>{org.location.city}</span><span>{org.location.state}</span></p>
+              <p className="text-gray-500">
+               <span>{org.location.address}</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Email */}
+        <div className="border rounded-xl p-4">
+          <p className="text-xs text-gray-400 uppercase mb-2">
+            Email Addresses
+          </p>
+
+          <div className="text-sm text-gray-500 flex items-center gap-2">
+            <Mail size={16} />
+            No email addresses available
+          </div>
+        </div>
+
+        {/* Phone */}
+        <div className="border rounded-xl p-4">
+          <p className="text-xs text-gray-400 uppercase mb-2">
+            Phone Numbers
+          </p>
+
+          <div className="text-sm text-gray-500 flex items-center gap-2">
+            <Phone size={16} />
+            No phone numbers available
+          </div>
+        </div>
       </div>
+    </div>
     </div>
   );
 }

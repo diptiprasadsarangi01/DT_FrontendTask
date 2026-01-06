@@ -1,7 +1,8 @@
 import ProfileHeader from "@/components/profile/ProfileHeader";
 import CurrentOrganization from "@/components/profile/CurrentOrganization";
 import Memberships from "@/components/profile/Memberships";
-import { user,organization , memberships } from "@/data/dummyData";
+import AllOrganization from "@/components/profile/AllOrganization";
+import { user,organization , memberships,allOrganizations } from "@/data/dummyData";
 export default function Home() {
   return (
   <>
@@ -9,6 +10,7 @@ export default function Home() {
       <ProfileHeader user={user} />
       <CurrentOrganization org={organization} />
       <Memberships mem={memberships} />
+      <AllOrganization organizations={allOrganizations} />
     </div>
   </>
   );

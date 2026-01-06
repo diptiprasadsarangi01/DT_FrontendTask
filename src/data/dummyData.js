@@ -15,7 +15,13 @@ export const organization = {
     email: "hariharan@gmail.com",
     phone: "+91 1234567890"
   },
-  location: "Hyderabad, TG, India"
+  location: {
+      id: "loc_1",
+      city: "Hyderabad",
+      state: "TG",
+      country: "India",
+      address: "Street No. 2, Hyderabad, TG 500007, India"
+  },
 };
 
 export const memberships = {
@@ -28,3 +34,16 @@ export const memberships = {
   }
   
 };
+
+export const allOrganizations = [
+  {
+    id: "org_001",
+    name: "DeepThought",
+    sector: "Education Technology",
+    website: "https://deepthought.com",
+    isCurrent: true,
+    membershipsCount: 1,
+    memberships: ["member"],
+    description: "DeepThought - Education Technology"
+  }
+];
