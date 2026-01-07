@@ -1,9 +1,14 @@
-import { Globe,ShieldCheck,Layers, MapPin, Mail, Phone } from "lucide-react";
+import { Globe,ShieldCheck,Layers, MapPin, Mail, Phone,Building2,UserCircle } from "lucide-react";
 
 export default function CurrentOrganization({ org  }) {
   return (
     <div className="bg-white p-6 rounded-xl shadow">
-      <h2 className="font-semibold mb-4 text-gray-600">Current Organization</h2>
+      <div className="flex items-center gap-2 mb-4">
+        <Building2 size={18} className="text-blue-600" />
+        <h2 className="font-semibold text-gray-700">
+          Current Organization
+        </h2>
+      </div>
       <h3 className="text-sm font-semibold text-gray-600 mb-3 uppercase">
         Overview
       </h3>
@@ -63,14 +68,36 @@ export default function CurrentOrganization({ org  }) {
 
       <hr className="my-4" />
 
-      <h3 className="font-medium mb-2 text-gray-400">Leadership Team</h3>
-      <div className="border rounded-lg p-4 w-fit">
-        <p className="font-semibold">
-          <span className="text-black">{org.leader.name}{" "}</span>
-          <span className="text-xs text-blue-600 bg-blue-100 p-1 rounded-sm mb-3">{org.leader.title}</span>
-        </p>
-        <p className="text-sm text-gray-500">{org.leader.email}</p>
-        <p className="text-sm text-gray-500">{org.leader.phone}</p>
+      <h3 className="text-sm font-semibold text-gray-600 mb-3 uppercase">
+        Leadership Team
+      </h3>
+        
+      <div className="border rounded-xl p-4 w-full md:w-80 bg-gray-50">
+        
+        <div className="flex items-center gap-3 mb-3">
+          <UserCircle size={36} className="text-blue-500" />
+        
+          <div>
+            <p className="font-semibold text-gray-900">
+              {org.leader.name}
+            </p>
+            <span className="inline-block mt-1 text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">
+              {org.leader.title}
+            </span>
+          </div>
+        </div>
+        
+        <div className="space-y-2 text-sm text-gray-600">
+          <div className="flex items-center gap-2">
+            <Mail size={14} />
+            <span>{org.leader.email}</span>
+          </div>
+        
+          <div className="flex items-center gap-2">
+            <Phone size={14} />
+            <span>{org.leader.phone || "Not available"}</span>
+          </div>
+        </div>
       </div>
 
 
@@ -82,7 +109,6 @@ export default function CurrentOrganization({ org  }) {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         
-        {/* Office Location */}
         <div className="border rounded-xl p-4">
           <p className="text-xs text-gray-400 uppercase mb-2">
             Office Locations
@@ -99,7 +125,6 @@ export default function CurrentOrganization({ org  }) {
           </div>
         </div>
 
-        {/* Email */}
         <div className="border rounded-xl p-4">
           <p className="text-xs text-gray-400 uppercase mb-2">
             Email Addresses
@@ -111,7 +136,6 @@ export default function CurrentOrganization({ org  }) {
           </div>
         </div>
 
-        {/* Phone */}
         <div className="border rounded-xl p-4">
           <p className="text-xs text-gray-400 uppercase mb-2">
             Phone Numbers
